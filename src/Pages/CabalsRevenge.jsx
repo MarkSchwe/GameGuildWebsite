@@ -1,6 +1,5 @@
-import './App.css'
-import OutsideGuide from './assets/PSquadCRGuideOut.pdf'
-import VGGuide from './assets/PSquadCRGuideVG.pdf'
+import OutsideGuide from '../assets/PSquadCRGuideOut.pdf'
+import VGGuide from '../assets/PSquadCRGuideVG.pdf'
 
 export default function CabalsRevenge() {
   return (

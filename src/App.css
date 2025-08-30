@@ -104,3 +104,10 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.raid-nav {
+  text-align: left;
+  padding: 1em;
+  color:rgb(30, 19, 149);
+  background-color: #888;
+}

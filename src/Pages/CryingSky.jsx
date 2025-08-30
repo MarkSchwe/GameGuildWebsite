@@ -1,6 +1,5 @@
-import './App.css'
-import FireFythGuide from './assets/PSquadFireFythCS.pdf'
-import StormGuide from './assets/PSquadStormCS.pdf'
+import FireFythGuide from '../assets/PSquadFireFythCS.pdf'
+import StormGuide from '../assets/PSquadStormCS.pdf'
 
 export default function CryingSky() {
   return (

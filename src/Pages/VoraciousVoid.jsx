@@ -1,6 +1,5 @@
-import './App.css'
-import VoidGuide from './assets/PSquadVoidVanguard.pdf'
-import VoidOutGuide from './assets/PSquadVoidOutside.pdf'
+import VoidGuide from '../assets/PSquadVoidVanguard.pdf'
+import VoidOutGuide from '../assets/PSquadVoidOutside.pdf'
 
 export default function VoraciousVoid() {
   return (

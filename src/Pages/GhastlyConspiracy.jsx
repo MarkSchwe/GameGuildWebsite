@@ -1,5 +1,4 @@
-import './App.css'
-import GhastlyGuide from './assets/PSquadGCGuide.pdf'
+import GhastlyGuide from '../assets/PSquadGCGuide.pdf'
 
 export default function Ghastly() {
   return (
