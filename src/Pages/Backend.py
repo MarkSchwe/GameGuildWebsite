@@ -76,6 +76,7 @@ def calc(input1,input2,input3,input4,input5):
         level2 = caps170
     else:
         return -1
+    
     scale = float((float(input5)/level[school][stat])*float(level2[school][stat]))
     if float(input5) > float(level[school][stat]):
         scale = float(level2[school][stat])
@@ -257,28 +258,33 @@ def revCalc(schooln,ScaedLevel,desired_stat,PreScaledlevel,current_stat):
 
 @app.route('/process', methods=['POST'])
 def process():
-    data = request.get_json(force=True)
+    try:
+        data = request.get_json(force=True)
 
-    call = data.get('call', '')
-    primary = data.get('primary', '')
-    Secondary = data.get('secondary', '')
-    initlvl = data.get('initlvl', 0)
-    tolvl = data.get('tolvl', 0)
-    stat = data.get('stat', '')
-    curstat = data.get('curstat', 0)
+        call = data.get('tool', '')
+        primary = data.get('prim', '')
+        Secondary = data.get('seco', '')
+        initlvl = data.get('initlvl', 0)
+        tolvl = data.get('tolvl', 0)
+        stat = data.get('stat', '')
+        curstat = data.get('curStat', 0)
 
-    if call == 'main':
-        #current school, current level, stat, scaled lvl, scaled stat
-        result = calc(primary,initlvl,stat,tolvl,curstat)
-    elif call == 'rev':
-        #current school, current level, stat, scaled lvl, scaled stat
-        result = revCalc(primary,initlvl,stat,tolvl,curstat)
-    elif call == 'offschool':
-        result = offschoolcalc(primary,Secondary,initlvl,tolvl,curstat)
-    else:
-        result = -1
+        if call == 'main':
+            #current school, current level, stat, scaled lvl, scaled stat
+            result = calc(primary,initlvl,stat,tolvl,curstat)
+        elif call == 'rev':
+            #current school, current level, stat, scaled lvl, scaled stat
+            result = revCalc(primary,initlvl,stat,tolvl,curstat)
+        elif call == 'offschool':
+            result = offschoolcalc(primary,Secondary,initlvl,tolvl,curstat)
+        else:
+            result = -1
 
-    return jsonify({"result": result})
+        
+        return jsonify({"result": result})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
