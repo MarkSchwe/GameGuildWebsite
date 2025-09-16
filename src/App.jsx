@@ -20,7 +20,9 @@ function Home() {
   return (
     <>
       <p>
-        Hello Welcome to my page and uh, graphic design is my passion or somthing lol
+        Welcome to the website for the Periwinkle Squad guild! 
+        This will be continuously updated with changes to graphical design, new content,
+        and updates, so stay tuned!
       </p>
     </>
   )
