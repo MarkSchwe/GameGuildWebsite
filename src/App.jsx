@@ -5,7 +5,8 @@ import Button from '@mui/material/Button'
 import Ghastly from './Pages/GhastlyConspiracy.jsx'
 import CryingSky from './Pages/CryingSky.jsx'
 import CabalsRevenge from './Pages/CabalsRevenge.jsx'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Changelog from './Pages/Changelog.jsx'
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -19,11 +20,20 @@ import ButtonTom from './Pages/ButtonTom.jsx';
 function Home() {
   return (
     <>
-      <p>
-        Welcome to the website for the Periwinkle Squad guild! 
-        This will be continuously updated with changes to graphical design, new content,
-        and updates, so stay tuned!
-      </p>
+  <div style={{
+  backgroundColor: 'white',
+  borderRadius: '16px',
+  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+  padding: '24px',
+  marginBottom: '32px'
+}}>
+  <h1 style={{ fontSize: '36px', fontWeight: 'bold', color: '#1f2937' }}>
+    Welcome to Periwinkle Squad!
+  </h1>
+  <p style={{ color: '#6b7280' }}>
+    This website is dedicated to helping with in game stuff.
+  </p>
+</div>
     </>
   )
 }
@@ -113,6 +123,7 @@ function App() {
             {{ paper: {sx: {backgroundColor: '#000000ff', color: '#ccccff', width: 250, padding: 2, boxShadow: '0px 4px 20px rgba(0,0,0,0.2)',}} }}>
               {raidList}
             </Drawer>
+          <Button component={Link} to="/Changelog" variant="outlined">Changelog</Button> 
           <img src={periwinkleLogo} className="plogo" />
         </nav>
         <Routes>
@@ -122,6 +133,7 @@ function App() {
           <Route path="/CabalsRevenge" element={<CabalsRevenge />} />
           <Route path="/GhastlyConspiracy" element={<Ghastly />} />
           <Route path="/ButtonTom" element={<ButtonTom />} />
+          <Route path="/Changelog" element={<Changelog />} />
         </Routes>
       </Router>
     </>
